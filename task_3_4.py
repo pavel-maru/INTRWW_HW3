@@ -17,8 +17,7 @@ LINES_COUNT = STRING_SIZE = 10
 
 
 def get_random_string():
-    return functools.reduce(lambda string, char: string + char,
-                  [chr(random.randint(ord('a'), ord('z'))) for _ in range(STRING_SIZE)])
+    return ''.join([chr(random.randint(ord('a'), ord('z'))) for _ in range(STRING_SIZE)])
 
 
 def create_text_file(name):
