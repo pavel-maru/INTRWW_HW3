@@ -24,10 +24,12 @@ def create_text_file(name):
         return False
     with open(name, 'w', encoding='utf-8') as file:
         numbers = [random.randint(0, NUMBER_FIRST_SIZE) for _ in range(LINES_COUNT)]
-        strings = [get_random_string() for _ in range(LINES_COUNT)]
-        for i in range(LINES_COUNT):
+        strings = []
+        for _ in range(LINES_COUNT):
             if random.randint(0, 10) % 2 == 0:
-                strings[i] = f'{get_random_string()}{random.randint(0, NUMBER_IN_STRING_SIZE)}'
+                strings.append(f'{get_random_string()}{random.randint(0, NUMBER_IN_STRING_SIZE)}')
+            else:
+                strings.append(f'{get_random_string()}')
         file.writelines([f'{number}\t{text}\n' for number, text in zip(numbers, strings)])
         return file
 
