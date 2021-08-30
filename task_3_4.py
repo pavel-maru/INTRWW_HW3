@@ -11,7 +11,6 @@
 
 import os
 import random
-import functools
 
 LINES_COUNT = STRING_SIZE = 10
 
