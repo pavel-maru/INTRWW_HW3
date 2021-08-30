@@ -16,8 +16,7 @@ NUMBER_IN_STRING_SIZE = 1000
 
 
 def get_random_string():
-    return functools.reduce(lambda string, char: string + char,
-                  [chr(random.randint(ord('a'), ord('z'))) for _ in range(STRING_SIZE)])
+    return ''.join([chr(random.randint(ord('a'), ord('z'))) for _ in range(STRING_SIZE)])
 
 
 def create_text_file(name):
